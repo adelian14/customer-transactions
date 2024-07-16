@@ -71,6 +71,16 @@ export class Data {
         let temp = this.filterByKey(key, val);
         let data = temp.map(T => T.amount);
         let labels = temp.map(T => T[label]);
+        let ob = {};
+        labels.forEach(x => { ob[x] = 0 });
+        for(let i = 0; i < labels.length; i++)
+            ob[labels[i]]+=data[i];
+        labels=[];
+        data=[];
+        for (const [key, value] of Object.entries(ob)) {
+            labels.push(key);
+            data.push(value);
+        }
         return { title: val, data, labels, light, dark };
     }
     getDataByDate(val) {
