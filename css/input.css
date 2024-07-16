@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+    .my-container{
+        @apply md:w-[85%] w-[95%] py-7 px-5 m-auto
+    }
+    .my-input{
+        @apply rounded-md outline outline-2 dark:outline-gray-300 outline-gray-600 bg-transparent text-gray-900 dark:text-gray-200 focus-visible:outline focus-visible:border-0 focus-visible:outline-[3px] dark:focus-visible:outline-blue-400 focus-visible:outline-blue-700 w-full;
+    }
+}
